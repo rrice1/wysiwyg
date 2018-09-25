@@ -66,6 +66,10 @@ const famousPeople = [
     selectedDiv.innerHTML = stringToPrint;
     };
 
+const test = (e) => {
+    //loop
+console.log(e);
+}
 
     const printSamuraiHeader = () => {
         let newString = '';
@@ -88,8 +92,18 @@ const famousPeople = [
                 newString +=    `</div>`;
 
             printToDom(newString, 'container');
+            document.getElementById(`s${[i]}`).addEventListener('click',test(event))
         }
-        
+
+        //do click here
+        // for(let i=0; i<famousPeople.length;i++)
         };
 
 printSamuraiHeader();
+
+
+// if(e.target.id === `s${[i]}`) {
+//     {
+//    document.getElementById(`s${[i]}`).style.border = "thin dotted red";
+// }
+// }
