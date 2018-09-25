@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* .container:nth-child(odd) {
+    background: lightyellow;
+    width: 32%;
+}
+
+.container:nth-child(even) {
+    background: lightblue;
+    width: 32%;
+} */
+
+.s2{
+    background: lightyellow; 
+    width: 32%;
+}
+.s4{
+    background: lightyellow;
+    width: 32%; 
+}
+.s0{
+    background: lightyellow;
+    width: 32%; 
+}
+.s1{
+    background: lightblue; 
+    width: 32%;
+}
+.s3{
+    background: lightblue; 
+    width: 32%;
+}
+.s5{
+    background: lightblue;
+    width: 32%; 
+}
+
+.textInputDiv{
+    display: flex;
+    justify-content: center;
+}
