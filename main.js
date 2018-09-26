@@ -96,6 +96,9 @@ console.log(e);
         }
 
         //do click here
+        for(let i=0; i<famousPeople.length;i++){
+        document.getElementById(`s${[i]}`).addEventListener('click',test(event))
+        }
         // for(let i=0; i<famousPeople.length;i++)
         };
 
