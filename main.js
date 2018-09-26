@@ -92,12 +92,22 @@ console.log(e);
                 newString +=    `</div>`;
 
             printToDom(newString, 'container');
-            document.getElementById(`s${[i]}`).addEventListener('click',test(event))
+            // document.getElementById(`s${[i]}`).addEventListener('click',test(event))
         }
 
         //do click here
         for(let i=0; i<famousPeople.length;i++){
-        document.getElementById(`s${[i]}`).addEventListener('click',test(event))
+        document.getElementById(`s${[i]}`).addEventListener('click',(e)=>{
+            // for if class=selected then classlist.toggle('unselected')
+            if(e.target.id === `s${[i]}`){
+            // e.target.style.border = "thin dotted red";
+            e.target.classList.toggle('selected');
+            }else if(e.target.parentNode.id === `s${[i]}`){
+                e.target.parentNode.classList.toggle('selected');
+            }else if(e.target.parentNode.parentNode.id === `s${[i]}`){
+                e.target.parentNode.parentNode.classList.toggle('selected');
+            }
+        })
         }
         // for(let i=0; i<famousPeople.length;i++)
         };
