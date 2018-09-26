@@ -101,7 +101,9 @@ console.log(e);
             // for if class=selected then classlist.toggle('unselected')
             for(let i=0; i<famousPeople.length;i++){
                 if(document.getElementById(`s${[i]}`).classList.contains('selected')){
-                    document.getElementsByClassName('selected').classList.toggleClass('selected') 
+                    // document.getElementsByClassName('selected').classList.toggle('selected') 
+                    document.getElementById(`s${[i]}`).classList.toggle('selected')
+                    
                 }
             }
             
@@ -113,6 +115,13 @@ console.log(e);
                 e.target.parentNode.classList.toggle('selected');
             }else if(e.target.parentNode.parentNode.id === `s${[i]}`){
                 e.target.parentNode.parentNode.classList.toggle('selected');
+            }
+            for(let i=0; i<famousPeople.length;i++){
+                if(document.getElementById(`s${[i]}`).classList.contains('selected')){
+                    // document.getElementsByClassName('selected').classList.toggle('selected') 
+                    document.getElementById('textInput').focus();
+                    
+                }
             }
         })
         }
