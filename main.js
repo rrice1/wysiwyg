@@ -99,6 +99,13 @@ console.log(e);
         for(let i=0; i<famousPeople.length;i++){
         document.getElementById(`s${[i]}`).addEventListener('click',(e)=>{
             // for if class=selected then classlist.toggle('unselected')
+            for(let i=0; i<famousPeople.length;i++){
+                if(document.getElementById(`s${[i]}`).classList.contains('selected')){
+                    document.getElementsByClassName('selected').classList.toggleClass('selected') 
+                }
+            }
+            
+            // document.getElementsByClassName('selected').classList.toggle('unselected');
             if(e.target.id === `s${[i]}`){
             // e.target.style.border = "thin dotted red";
             e.target.classList.toggle('selected');
