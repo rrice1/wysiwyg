@@ -22,7 +22,7 @@ const famousPeople = [
  {
     title: "Samurai2",
     name: "Tomoe Gozen",
-    bio: "Serving under Minamoto Yoshinaka, Tomoe was one of his finest soldiers, and her skills in battle dwarfed many of those held by even the strongest men in her unit.",
+    bio: "Fun bio",
     image: "https://upload.wikimedia.org/wikipedia/commons/4/48/Tomoe-Gozen.jpg",
     lifespan: {
       birth: 1747,
@@ -66,11 +66,6 @@ const famousPeople = [
     selectedDiv.innerHTML = stringToPrint;
     };
 
-const test = (e) => {
-    //loop
-console.log(e);
-}
-
     const printSamuraiHeader = () => {
         let newString = '';
 
@@ -82,7 +77,7 @@ console.log(e);
                 newString +=    `<h3>${famousPeople[i].name}</h3>`;
                 newString +=    `</header>`;
                 newString +=    `<section id="sSection">`;
-                newString +=    `<p>${famousPeople[i].bio}</p>`
+                newString +=    `<p id="b${[i]}" class="b${[i]}">${famousPeople[i].bio}</p>`
                 newString +=    `<img>${famousPeople[i].image}</img>`
                 newString +=    `</section>`;
                 newString +=    `<footer id="sFooter">`;
@@ -119,7 +114,19 @@ console.log(e);
             for(let i=0; i<famousPeople.length;i++){
                 if(document.getElementById(`s${[i]}`).classList.contains('selected')){
                     // document.getElementsByClassName('selected').classList.toggle('selected') 
-                    document.getElementById('textInput').focus();
+                    document.getElementById('textInput').focus()
+                    // document.getElementById(`b${[i]}`).value += document.getElementById('textInput').value
+                    if(document.getElementById('textInput').value != famousPeople[i].bio && document.getElementById('textInput').value != ""){
+                    document.getElementById('textInput').addEventListener('keypress', () => {
+                        famousPeople[i].bio = document.getElementById('textInput').value
+                        printSamuraiHeader();
+                    })
+                    // famousPeople[i].bio = document.getElementById('textInput').value
+                    // if(document.getElementById('textInput').value != document.getElementById(`b${[i]}`).value && document.getElementById('textInput').value != ""){
+                    // document.getElementById(`b${[i]}`).value = document.getElementById('textInput').value
+                    famousPeople[i].bio = document.getElementById('textInput').value
+                    printSamuraiHeader();
+                    }
                     
                 }
             }
@@ -127,7 +134,10 @@ console.log(e);
         }
         // for(let i=0; i<famousPeople.length;i++)
         };
-
+// const typing = () => {
+//         for(let i=0; i<famousPeople.length;i++){
+            
+//         }
 printSamuraiHeader();
 
 
